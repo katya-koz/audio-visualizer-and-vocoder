@@ -59,63 +59,6 @@ function pdm(real[0..s] x, real qe = 0) // initial running error is zero
 				acc4 <= 0;
         end
     end
-
-/
-// first order delta sigma modulator, x64 oversampling rate (OSR)
-
- /*  reg [WIDTH:0] acc1 = 0;
-	reg [WIDTH + 1:0] acc2 = 0;
-	reg [WIDTH + 2:0] acc3 = 0;
-	reg [WIDTH + 3:0] acc4 = 0;
-    always @(posedge clk) begin
-        acc1 <= acc1[WIDTH - 1 :0] + pcm_in - pdm_out;
-		  acc2 <= acc2[WIDTH + 1 - 1:0] + acc1 - pdm_out;
-		  acc3 <= acc3[WIDTH + 2 - 1:0] + acc2 - pdm_out;
-		  acc4 <= acc4[WIDTH + 3 - 1:0] + acc3 - pdm_out;
-		  
-        pdm_out <= acc2[WIDTH + 3];
-        if(reset) begin
-            pdm_out <= 0;
-            acc1 <= 0;
-				acc2 <= 0;
-				acc3 <= 0;
-				acc4 <= 0;
-        end
-    end
-	 
-	 */
-	 
-/*	 parameter K1 = 2; // scale for acc1 → acc2
-parameter K2 = 2; // acc2 → acc3
-parameter K3 = 2; // acc3 → acc4
-parameter K4 = 1; // direct feed from acc4 (optional)
-
-reg [WIDTH + 2:0] acc1 = 0;
-reg [WIDTH+3:0] acc2 = 0;
-reg [WIDTH+4:0] acc3 = 0;
-reg [WIDTH+5:0] acc4 = 0;
-
-always @(posedge clk) begin
-    if(reset) begin
-        pdm_out <= 0;
-        acc1 <= 0; acc2 <= 0; acc3 <= 0; acc4 <= 0;
-    end else begin
-        // First integrator
-        acc1 <= acc1[WIDTH + 2-1:0] + pcm_in - pdm_out;
-
-        // Second integrator with coefficient
-        acc2 <= acc2[WIDTH+3-1:0] + (K1 * acc1) - pdm_out;
-
-        // Third integrator with coefficient
-        acc3 <= acc3[WIDTH+4-1:0] + (K2 * acc2) - pdm_out;
-
-        // Fourth integrator with coefficient
-        acc4 <= acc4[WIDTH+5-1:0] + (K3 * acc3) - pdm_out;
-
-        // Output MSB
-        pdm_out <= acc4[WIDTH+5];
-    end
-	 end*/
 	 
 endmodule
 
