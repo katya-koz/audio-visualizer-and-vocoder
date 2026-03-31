@@ -1,0 +1,68 @@
+`define NUM_SAMPLE_BITS 18
+`define CALIBRATION {13'd226, 5'd0}  // base offset to remove DC
+
+module mic_translator_simple(
+    input clk,           // system clock, fast enough to sample I2S bits
+    input reset,
+    input DOUT,          // I2S data from mic
+    output reg LRCLK,
+    output reg BCLK,
+    output reg new_t,
+    output reg [7:0] pwm_sample
+);
+
+    // --- internal registers ---
+    reg [17:0] data_buffer = 0;
+    reg [4:0] bit_count = 0;     // count 18 bits
+    reg [17:0] sample_signed;
+    
+    // For PWM scaling
+    wire [17:0] calibrated_data = data_buffer + `CALIBRATION;
+    wire signed [17:0] scaled;
+
+    // --- Simple BCLK & LRCLK passthrough ---
+    always @(posedge clk) begin
+        if (!reset) begin
+            BCLK <= 1'b1;
+            LRCLK <= 1'b0;
+        end
+        else begin
+            // In real hardware, BCLK/LRCLK come from mic. For simulation/fake clock:
+            BCLK <= clk; 
+            // LRCLK toggling every 18 bits
+            if (bit_count == `NUM_SAMPLE_BITS-1)
+                LRCLK <= ~LRCLK;
+        end
+    end
+
+    // --- Sample capture ---
+    always @(posedge clk) begin
+        if (!reset) begin
+            bit_count <= 0;
+            data_buffer <= 0;
+            new_t <= 0;
+            pwm_sample <= 8'd128;  // mid-scale
+        end
+        else begin
+            // Shift in one bit per clk
+            data_buffer <= {data_buffer[16:0], DOUT};
+            if (bit_count < `NUM_SAMPLE_BITS-1) begin
+                bit_count <= bit_count + 1;
+                new_t <= 0;
+            end
+            else begin
+                // Full 18-bit sample ready
+                bit_count <= 0;
+                new_t <= 1;
+
+                // Apply calibration
+                sample_signed <= calibrated_data;
+
+                // --- Scale to 8-bit PWM ---
+                // Take top 8 bits for volume + center at 128
+                pwm_sample <= sample_signed[17:10] + 8'd128;
+            end
+        end
+    end
+
+endmodule

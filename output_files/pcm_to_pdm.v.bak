@@ -1,0 +1,37 @@
+module pcm_to_pdm (
+    input wire clk,                 // high-speed clock (MHz range!)
+    input wire reset,
+    input wire signed [15:0] pcm_in, // 16-bit PCM sample
+    output reg pdm_out              // 1-bit PDM output
+);
+
+    // Wider accumulator for stability (important!)
+    reg signed [18:0] acc = 0;
+
+    // Feedback values (match input scale)
+    localparam signed [18:0] POS = 19'sd32767;
+    localparam signed [18:0] NEG = -19'sd32768;
+
+    // Extend input to match accumulator width
+    wire signed [18:0] input_ext = {pcm_in, 3'b000}; // simple scaling
+
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            acc <= 0;
+            pdm_out <= 0;
+        end else begin
+            // Sigma-delta loop
+            if (pdm_out)
+                acc <= acc + input_ext - POS;
+            else
+                acc <= acc + input_ext - NEG;
+
+            // Comparator
+            if (acc >= 0)
+                pdm_out <= 1;
+            else
+                pdm_out <= 0;
+        end
+    end
+
+endmodule

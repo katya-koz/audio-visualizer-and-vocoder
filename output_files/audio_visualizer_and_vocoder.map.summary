@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Mon Mar 30 00:53:35 2026
+Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+Revision Name : audio_visualizer_and_vocoder
+Top-level Entity Name : vocoder
+Family : MAX 10
+Total logic elements : 100
+    Total combinational functions : 81
+    Dedicated logic registers : 69
+Total registers : 69
+Total pins : 16
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1
+UFM blocks : 0
+ADC blocks : 0
