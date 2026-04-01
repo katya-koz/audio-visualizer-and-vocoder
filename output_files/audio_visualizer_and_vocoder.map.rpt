@@ -1,5 +1,5 @@
 Analysis & Synthesis report for audio_visualizer_and_vocoder
-Mon Mar 30 00:53:35 2026
+Tue Mar 31 19:28:22 2026
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -50,15 +50,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Mar 30 00:53:35 2026          ;
+; Analysis & Synthesis Status        ; Successful - Tue Mar 31 19:28:22 2026          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; audio_visualizer_and_vocoder                   ;
 ; Top-level Entity Name              ; vocoder                                        ;
 ; Family                             ; MAX 10                                         ;
-; Total logic elements               ; 100                                            ;
-;     Total combinational functions  ; 81                                             ;
-;     Dedicated logic registers      ; 69                                             ;
-; Total registers                    ; 69                                             ;
+; Total logic elements               ; 92                                             ;
+;     Total combinational functions  ; 74                                             ;
+;     Dedicated logic registers      ; 63                                             ;
+; Total registers                    ; 63                                             ;
 ; Total pins                         ; 16                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
@@ -172,22 +172,22 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                     ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                 ; Library ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+---------+
-; vocoder.v                        ; yes             ; User Verilog HDL File        ; C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/Final/vocoder.v                 ;         ;
-; mems_translate.v                 ; yes             ; User Verilog HDL File        ; C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/Final/mems_translate.v          ;         ;
-; output_files/pcm_to_pdm.v        ; yes             ; User Verilog HDL File        ; C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/Final/output_files/pcm_to_pdm.v ;         ;
-; pll5.v                           ; yes             ; User Wizard-Generated File   ; C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/Final/pll5.v                    ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altpll.tdf                         ;         ;
-; aglobal231.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc                     ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_pll.inc                    ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratixii_pll.inc                  ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/cycloneii_pll.inc                  ;         ;
-; db/pll5_altpll.v                 ; yes             ; Auto-Generated Megafunction  ; C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/Final/db/pll5_altpll.v          ;         ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                       ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                   ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------+---------+
+; vocoder.v                        ; yes             ; User Verilog HDL File        ; C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/final 3/vocoder.v                 ;         ;
+; mems_translate.v                 ; yes             ; User Verilog HDL File        ; C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/final 3/mems_translate.v          ;         ;
+; output_files/pcm_to_pdm.v        ; yes             ; User Verilog HDL File        ; C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/final 3/output_files/pcm_to_pdm.v ;         ;
+; pll5.v                           ; yes             ; User Wizard-Generated File   ; C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/final 3/pll5.v                    ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altpll.tdf                           ;         ;
+; aglobal231.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc                       ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_pll.inc                      ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratixii_pll.inc                    ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/cycloneii_pll.inc                    ;         ;
+; db/pll5_altpll.v                 ; yes             ; Auto-Generated Megafunction  ; C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/final 3/db/pll5_altpll.v          ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------+
@@ -195,20 +195,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                          ;
 +---------------------------------------------+--------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 100                                                                            ;
+; Estimated Total logic elements              ; 92                                                                             ;
 ;                                             ;                                                                                ;
-; Total combinational functions               ; 81                                                                             ;
+; Total combinational functions               ; 74                                                                             ;
 ; Logic element usage by number of LUT inputs ;                                                                                ;
-;     -- 4 input functions                    ; 6                                                                              ;
-;     -- 3 input functions                    ; 23                                                                             ;
-;     -- <=2 input functions                  ; 52                                                                             ;
+;     -- 4 input functions                    ; 7                                                                              ;
+;     -- 3 input functions                    ; 21                                                                             ;
+;     -- <=2 input functions                  ; 46                                                                             ;
 ;                                             ;                                                                                ;
 ; Logic elements by mode                      ;                                                                                ;
-;     -- normal mode                          ; 36                                                                             ;
-;     -- arithmetic mode                      ; 45                                                                             ;
+;     -- normal mode                          ; 33                                                                             ;
+;     -- arithmetic mode                      ; 41                                                                             ;
 ;                                             ;                                                                                ;
-; Total registers                             ; 69                                                                             ;
-;     -- Dedicated logic registers            ; 69                                                                             ;
+; Total registers                             ; 63                                                                             ;
+;     -- Dedicated logic registers            ; 63                                                                             ;
 ;     -- I/O registers                        ; 0                                                                              ;
 ;                                             ;                                                                                ;
 ; I/O pins                                    ; 16                                                                             ;
@@ -219,9 +219,9 @@ https://fpgasoftware.intel.com/eula.
 ;     -- PLLs                                 ; 1                                                                              ;
 ;                                             ;                                                                                ;
 ; Maximum fan-out node                        ; pll5:myPll|altpll:altpll_component|pll5_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 76                                                                             ;
-; Total fan-out                               ; 435                                                                            ;
-; Average fan-out                             ; 2.38                                                                           ;
+; Maximum fan-out                             ; 69                                                                             ;
+; Total fan-out                               ; 403                                                                            ;
+; Average fan-out                             ; 2.37                                                                           ;
 +---------------------------------------------+--------------------------------------------------------------------------------+
 
 
@@ -230,8 +230,8 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------+----------------+--------------+
 ; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                    ; Entity Name    ; Library Name ;
 +---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------+----------------+--------------+
-; |vocoder                              ; 81 (0)              ; 69 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 16   ; 0            ; 0          ; |vocoder                                                               ; vocoder        ; work         ;
-;    |mic_translator:main_translator|   ; 42 (42)             ; 48 (48)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vocoder|mic_translator:main_translator                                ; mic_translator ; work         ;
+; |vocoder                              ; 74 (0)              ; 63 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 16   ; 0            ; 0          ; |vocoder                                                               ; vocoder        ; work         ;
+;    |mic_translator:main_translator|   ; 35 (35)             ; 42 (42)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vocoder|mic_translator:main_translator                                ; mic_translator ; work         ;
 ;    |pcm_to_pdm:PCMtoPDM_converter|    ; 39 (39)             ; 20 (20)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vocoder|pcm_to_pdm:PCMtoPDM_converter                                 ; pcm_to_pdm     ; work         ;
 ;    |pll5:myPll|                       ; 0 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vocoder|pll5:myPll                                                    ; pll5           ; work         ;
 ;       |altpll:altpll_component|       ; 0 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vocoder|pll5:myPll|altpll:altpll_component                            ; altpll         ; work         ;
@@ -254,33 +254,35 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 69    ;
-; Number of registers using Synchronous Clear  ; 26    ;
-; Number of registers using Synchronous Load   ; 1     ;
+; Total registers                              ; 63    ;
+; Number of registers using Synchronous Clear  ; 25    ;
+; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 1     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 46    ;
+; Number of registers using Clock Enable       ; 41    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------+
-; Inverted Register Statistics                             ;
-+------------------------------------------------+---------+
-; Inverted Register                              ; Fan out ;
-+------------------------------------------------+---------+
-; mic_translator:main_translator|sample_count[0] ; 1       ;
-; Total number of inverted registers = 1         ;         ;
-+------------------------------------------------+---------+
++----------------------------------------------------+
+; Inverted Register Statistics                       ;
++------------------------------------------+---------+
+; Inverted Register                        ; Fan out ;
++------------------------------------------+---------+
+; mic_translator:main_translator|lrclk_reg ; 4       ;
+; Total number of inverted registers = 1   ;         ;
++------------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
-; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |vocoder|mic_translator:main_translator|bit_counter[5] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+; 3:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |vocoder|mic_translator:main_translator|sample_out[7]   ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |vocoder|mic_translator:main_translator|data_buffer[14] ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |vocoder|mic_translator:main_translator|bit_counter[4]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------+
@@ -699,27 +701,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 16                          ;
-; cycloneiii_ff         ; 69                          ;
+; cycloneiii_ff         ; 63                          ;
 ;     CLR               ; 1                           ;
-;     ENA               ; 40                          ;
+;     ENA               ; 35                          ;
 ;     ENA SCLR          ; 6                           ;
-;     SCLR              ; 20                          ;
-;     SLD               ; 1                           ;
-;     plain             ; 1                           ;
-; cycloneiii_lcell_comb ; 81                          ;
-;     arith             ; 45                          ;
-;         2 data inputs ; 26                          ;
+;     SCLR              ; 19                          ;
+;     plain             ; 2                           ;
+; cycloneiii_lcell_comb ; 75                          ;
+;     arith             ; 41                          ;
+;         2 data inputs ; 22                          ;
 ;         3 data inputs ; 19                          ;
-;     normal            ; 36                          ;
+;     normal            ; 34                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 3                           ;
-;         2 data inputs ; 22                          ;
-;         3 data inputs ; 4                           ;
-;         4 data inputs ; 6                           ;
+;         2 data inputs ; 21                          ;
+;         3 data inputs ; 2                           ;
+;         4 data inputs ; 7                           ;
 ; cycloneiii_pll        ; 1                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.80                        ;
-; Average LUT depth     ; 2.63                        ;
+; Average LUT depth     ; 2.56                        ;
 +-----------------------+-----------------------------+
 
 
@@ -738,35 +739,35 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Mon Mar 30 00:53:30 2026
+    Info: Processing started: Tue Mar 31 19:28:18 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off audio_visualizer_and_vocoder -c audio_visualizer_and_vocoder
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file vocoder.v
-    Info (12023): Found entity 1: vocoder File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/Final/vocoder.v Line: 1
+    Info (12023): Found entity 1: vocoder File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/final 3/vocoder.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file mems_translate.v
-    Info (12023): Found entity 1: mic_translator File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/Final/mems_translate.v Line: 8
+    Info (12023): Found entity 1: mic_translator File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/final 3/mems_translate.v Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file clkdiv.v
-    Info (12023): Found entity 1: clkdiv File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/Final/clkdiv.v Line: 1
+    Info (12023): Found entity 1: clkdiv File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/final 3/clkdiv.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file pll.v
-    Info (12023): Found entity 1: pll File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/Final/pll.v Line: 40
+    Info (12023): Found entity 1: pll File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/final 3/pll.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file pll2.v
-    Info (12023): Found entity 1: pll2 File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/Final/pll2.v Line: 40
+    Info (12023): Found entity 1: pll2 File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/final 3/pll2.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file pll3.v
-    Info (12023): Found entity 1: pll3 File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/Final/pll3.v Line: 40
+    Info (12023): Found entity 1: pll3 File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/final 3/pll3.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file output_files/pcm_to_pdm.v
-    Info (12023): Found entity 1: pcm_to_pdm File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/Final/output_files/pcm_to_pdm.v Line: 1
+    Info (12023): Found entity 1: pcm_to_pdm File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/final 3/output_files/pcm_to_pdm.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file pll4.v
-    Info (12023): Found entity 1: pll4 File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/Final/pll4.v Line: 40
+    Info (12023): Found entity 1: pll4 File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/final 3/pll4.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file pll5.v
-    Info (12023): Found entity 1: pll5 File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/Final/pll5.v Line: 40
-Warning (10236): Verilog HDL Implicit Net warning at vocoder.v(34): created implicit net for "clock_4M" File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/Final/vocoder.v Line: 34
-Warning (10236): Verilog HDL Implicit Net warning at vocoder.v(35): created implicit net for "clock_16M" File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/Final/vocoder.v Line: 35
+    Info (12023): Found entity 1: pll5 File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/final 3/pll5.v Line: 40
+Warning (10236): Verilog HDL Implicit Net warning at vocoder.v(34): created implicit net for "clock_4M" File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/final 3/vocoder.v Line: 34
+Warning (10236): Verilog HDL Implicit Net warning at vocoder.v(35): created implicit net for "clock_16M" File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/final 3/vocoder.v Line: 35
 Info (12127): Elaborating entity "vocoder" for the top level hierarchy
-Info (12128): Elaborating entity "pll5" for hierarchy "pll5:myPll" File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/Final/vocoder.v Line: 37
-Info (12128): Elaborating entity "altpll" for hierarchy "pll5:myPll|altpll:altpll_component" File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/Final/pll5.v Line: 108
-Info (12130): Elaborated megafunction instantiation "pll5:myPll|altpll:altpll_component" File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/Final/pll5.v Line: 108
-Info (12133): Instantiated megafunction "pll5:myPll|altpll:altpll_component" with the following parameter: File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/Final/pll5.v Line: 108
+Info (12128): Elaborating entity "pll5" for hierarchy "pll5:myPll" File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/final 3/vocoder.v Line: 37
+Info (12128): Elaborating entity "altpll" for hierarchy "pll5:myPll|altpll:altpll_component" File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/final 3/pll5.v Line: 108
+Info (12130): Elaborated megafunction instantiation "pll5:myPll|altpll:altpll_component" File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/final 3/pll5.v Line: 108
+Info (12133): Instantiated megafunction "pll5:myPll|altpll:altpll_component" with the following parameter: File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/final 3/pll5.v Line: 108
     Info (12134): Parameter "bandwidth_type" = "AUTO"
     Info (12134): Parameter "clk0_divide_by" = "25"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
@@ -827,26 +828,25 @@ Info (12133): Instantiated megafunction "pll5:myPll|altpll:altpll_component" wit
     Info (12134): Parameter "self_reset_on_loss_lock" = "OFF"
     Info (12134): Parameter "width_clock" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll5_altpll.v
-    Info (12023): Found entity 1: pll5_altpll File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/Final/db/pll5_altpll.v Line: 31
+    Info (12023): Found entity 1: pll5_altpll File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/final 3/db/pll5_altpll.v Line: 31
 Info (12128): Elaborating entity "pll5_altpll" for hierarchy "pll5:myPll|altpll:altpll_component|pll5_altpll:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altpll.tdf Line: 898
-Info (12128): Elaborating entity "mic_translator" for hierarchy "mic_translator:main_translator" File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/Final/vocoder.v Line: 49
-Warning (10036): Verilog HDL or VHDL warning at mems_translate.v(11): object "lrclk_wire" assigned a value but never read File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/Final/mems_translate.v Line: 11
-Warning (10230): Verilog HDL assignment warning at mems_translate.v(39): truncated value with size 32 to match size of target (6) File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/Final/mems_translate.v Line: 39
-Warning (10230): Verilog HDL assignment warning at mems_translate.v(58): truncated value with size 32 to match size of target (5) File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/Final/mems_translate.v Line: 58
-Info (12128): Elaborating entity "pcm_to_pdm" for hierarchy "pcm_to_pdm:PCMtoPDM_converter" File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/Final/vocoder.v Line: 62
+Info (12128): Elaborating entity "mic_translator" for hierarchy "mic_translator:main_translator" File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/final 3/vocoder.v Line: 49
+Warning (10036): Verilog HDL or VHDL warning at mems_translate.v(17): object "sample_count" assigned a value but never read File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/final 3/mems_translate.v Line: 17
+Warning (10230): Verilog HDL assignment warning at mems_translate.v(34): truncated value with size 32 to match size of target (6) File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/final 3/mems_translate.v Line: 34
+Info (12128): Elaborating entity "pcm_to_pdm" for hierarchy "pcm_to_pdm:PCMtoPDM_converter" File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/final 3/vocoder.v Line: 62
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning (15899): PLL "pll5:myPll|altpll:altpll_component|pll5_altpll:auto_generated|pll1" has parameters clk1_multiply_by and clk1_divide_by specified but port CLK[1] is not connected File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/Final/db/pll5_altpll.v Line: 51
-Info (21057): Implemented 117 device resources after synthesis - the final resource count might be different
+Warning (15899): PLL "pll5:myPll|altpll:altpll_component|pll5_altpll:auto_generated|pll1" has parameters clk1_multiply_by and clk1_divide_by specified but port CLK[1] is not connected File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/final 3/db/pll5_altpll.v Line: 51
+Info (21057): Implemented 126 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 13 output pins
-    Info (21061): Implemented 100 logic cells
+    Info (21061): Implemented 109 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 4842 megabytes
-    Info: Processing ended: Mon Mar 30 00:53:35 2026
-    Info: Elapsed time: 00:00:05
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4841 megabytes
+    Info: Processing ended: Tue Mar 31 19:28:22 2026
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:11
 
 

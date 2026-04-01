@@ -1,14 +1,14 @@
-Fitter Status : Successful - Mon Mar 30 00:53:39 2026
+Fitter Status : Successful - Tue Mar 31 19:28:27 2026
 Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 Revision Name : audio_visualizer_and_vocoder
 Top-level Entity Name : vocoder
 Family : MAX 10
 Device : 10M50DAF484C6GES
 Timing Models : Preliminary
-Total logic elements : 83 / 49,760 ( < 1 % )
-    Total combinational functions : 83 / 49,760 ( < 1 % )
-    Dedicated logic registers : 69 / 49,760 ( < 1 % )
-Total registers : 69
+Total logic elements : 77 / 49,760 ( < 1 % )
+    Total combinational functions : 76 / 49,760 ( < 1 % )
+    Dedicated logic registers : 63 / 49,760 ( < 1 % )
+Total registers : 63
 Total pins : 16 / 360 ( 4 % )
 Total virtual pins : 0
 Total memory bits : 0 / 1,677,312 ( 0 % )
