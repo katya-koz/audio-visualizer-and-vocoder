@@ -8,8 +8,10 @@ module speech_vocoder (
 );
 
  // DC BLOCKING FILTER
+ // removes dc offset (low freq. artifacts)
+ 
  reg signed [17:0] pcm_prev;
- reg signed [17:0] hp_out;
+ reg signed [17:0] hp_out; // high pass out
 
  always @(posedge clk) begin
 	  if (~reset) begin
@@ -17,22 +19,29 @@ module speech_vocoder (
 			hp_out   <= 0;
 	  end else if (pcm_valid) begin
 			pcm_prev <= pcm_in;
-			hp_out   <= $signed(pcm_in)  - $signed(pcm_prev)
-						 + $signed(hp_out)  - $signed(hp_out >>> 10);
+			// first order iir high pass filter --> y[n] = x[n] - x[n-1] + (1 - a)*y[n-1]
+			hp_out   <= $signed(pcm_in)  - $signed(pcm_prev) + $signed(hp_out)  - $signed(hp_out >>> 10); // audio signals are centered around 0
 	  end
  end
 
  //NOISE GATE 
+ // block out unwanted noise
+ // uses an envelope -> track loudness of signal over time
+ // fast attack (reacts qucikyl to speech) slow decay (prevents choppy dropouts)
  reg [17:0] envelope;
- wire [17:0] abs_hp = hp_out[17] ? (~hp_out + 1'b1) : hp_out;
+ wire [17:0] abs_hp = hp_out[17] ? (~hp_out + 1'b1) : hp_out; // take absolute value since hp is centered around 0
 
  always @(posedge clk) begin
 	  if (~reset) begin
 			envelope <= 0;
 	  end else if (pcm_valid) begin
 			if (abs_hp > envelope)
+			// fast attack (right shifted only 3 bits)
+			// move the envelope a small fraction towards the actual audio level
 				 envelope <= envelope + ((abs_hp - envelope) >> 3);
 			else
+			// slow decay (right shifted 8 bits)
+			// move the envelope a small(er) fraction away from the actual audio level
 				 envelope <= envelope - ((envelope - abs_hp) >> 8);
 	  end
  end
@@ -68,10 +77,13 @@ module speech_vocoder (
  endcase
  end
 
+ // as time goes on, accumulate the phase
+ // phase inc changes based on selected frequency
  always @(posedge clk) begin
 	  if (~reset)
 			phase_acc <= 0;
 	  else if (pcm_valid)
+	      // will automatically wrap around - phase acc is like a point going around a circle
 			phase_acc <= phase_acc + phase_inc;
  end
 
@@ -79,7 +91,7 @@ module speech_vocoder (
 
  reg signed [17:0] sine_lut [0:255];
  initial begin
- // generated with python script
+		// generated with python script, 2pi / 256 samples, 8 bits
 	  sine_lut[0]   = 18'sd0;        sine_lut[1]   = 18'sd3217;
 	  sine_lut[2]   = 18'sd6431;     sine_lut[3]   = 18'sd9642;
 	  sine_lut[4]   = 18'sd12847;    sine_lut[5]   = 18'sd16044;
@@ -225,6 +237,7 @@ module speech_vocoder (
 	  if (~reset)
 			pcm_out <= 0;
 	  else if (pcm_valid)
+			// send out ring modulated audio if the noise gate is open (sound is above threshhold)
 			pcm_out <= gate_open ? ring_out : 18'd0;
  end
 
