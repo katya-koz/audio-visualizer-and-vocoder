@@ -1,0 +1,21 @@
+module visualizer(
+
+
+);
+	
+	wire [31:0] column;
+    wire [31:0] row;
+    wire disp_ena;
+
+    vga_controller controller_inst(
+        .pixel_clk(pixel_clk),
+        .reset_n(KEY[0]),
+        .h_sync(VGA_HS),
+        .v_sync(VGA_VS),
+        .disp_ena(disp_ena),
+        .column(column),
+        .row(row)
+    );
+
+
+endmodule

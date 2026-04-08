@@ -1,0 +1,8 @@
+
+State Machine - |main|fft_processor:main_processor|state
+Name state.STAGE0 state.STAGE3 state.STAGE2 state.STAGE1 state.IDLE 
+state.IDLE 0 0 0 0 0 
+state.STAGE1 0 0 0 1 1 
+state.STAGE2 0 0 1 0 1 
+state.STAGE3 0 1 0 0 1 
+state.STAGE0 1 0 0 0 1 

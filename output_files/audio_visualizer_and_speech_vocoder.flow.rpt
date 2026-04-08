@@ -1,0 +1,144 @@
+Flow report for audio_visualizer_and_speech_vocoder
+Tue Apr  7 16:57:55 2026
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2024  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------+
+; Flow Summary                                                                        ;
++------------------------------------+------------------------------------------------+
+; Flow Status                        ; Successful - Tue Apr  7 16:57:55 2026          ;
+; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                      ; audio_visualizer_and_speech_vocoder            ;
+; Top-level Entity Name              ; main                                           ;
+; Family                             ; MAX 10                                         ;
+; Device                             ; 10M50DAF484C6GES                               ;
+; Timing Models                      ; Preliminary                                    ;
+; Total logic elements               ; 6,984 / 49,760 ( 14 % )                        ;
+;     Total combinational functions  ; 6,652 / 49,760 ( 13 % )                        ;
+;     Dedicated logic registers      ; 1,492 / 49,760 ( 3 % )                         ;
+; Total registers                    ; 1492                                           ;
+; Total pins                         ; 40 / 360 ( 11 % )                              ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                          ;
+; Embedded Multiplier 9-bit elements ; 212 / 288 ( 74 % )                             ;
+; Total PLLs                         ; 1 / 4 ( 25 % )                                 ;
+; UFM blocks                         ; 0 / 1 ( 0 % )                                  ;
+; ADC blocks                         ; 0 / 2 ( 0 % )                                  ;
++------------------------------------+------------------------------------------------+
+
+
++---------------------------------------------------------+
+; Flow Settings                                           ;
++-------------------+-------------------------------------+
+; Option            ; Setting                             ;
++-------------------+-------------------------------------+
+; Start date & time ; 04/07/2026 16:57:12                 ;
+; Main task         ; Compilation                         ;
+; Revision Name     ; audio_visualizer_and_speech_vocoder ;
++-------------------+-------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                                     ;
++-------------------------------------+----------------------------------------+-------------------------------------+-------------+-----------------------------------+
+; Assignment Name                     ; Value                                  ; Default Value                       ; Entity Name ; Section Id                        ;
++-------------------------------------+----------------------------------------+-------------------------------------+-------------+-----------------------------------+
+; COMPILER_SIGNATURE_ID               ; 171983381157732.177559543227852        ; --                                  ; --          ; --                                ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --                                  ; --          ; eda_board_design_timing           ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --                                  ; --          ; eda_board_design_boundary_scan    ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --                                  ; --          ; eda_board_design_signal_integrity ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --                                  ; --          ; eda_board_design_symbol           ;
+; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --                                  ; --          ; eda_simulation                    ;
+; EDA_SIMULATION_TOOL                 ; Questa Intel FPGA (Verilog)            ; <None>                              ; --          ; --                                ;
+; EDA_TIME_SCALE                      ; 1 ps                                   ; --                                  ; --          ; eda_simulation                    ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --                                  ; --          ; --                                ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --                                  ; --          ; --                                ;
+; MISC_FILE                           ; pll_bb.v                               ; --                                  ; --          ; --                                ;
+; MISC_FILE                           ; pll.ppf                                ; --                                  ; --          ; --                                ;
+; MISC_FILE                           ; pll2_bb.v                              ; --                                  ; --          ; --                                ;
+; MISC_FILE                           ; pll2.ppf                               ; --                                  ; --          ; --                                ;
+; MISC_FILE                           ; pll3_bb.v                              ; --                                  ; --          ; --                                ;
+; MISC_FILE                           ; pll3.ppf                               ; --                                  ; --          ; --                                ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --                                  ; main        ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --                                  ; main        ; Top                               ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --                                  ; main        ; Top                               ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --                                  ; --          ; --                                ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --                                  ; --          ; --                                ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --                                  ; --          ; --                                ;
+; TOP_LEVEL_ENTITY                    ; main                                   ; audio_visualizer_and_speech_vocoder ; --          ; --                                ;
++-------------------------------------+----------------------------------------+-------------------------------------+-------------+-----------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:15     ; 1.0                     ; 4942 MB             ; 00:00:17                           ;
+; Fitter               ; 00:00:19     ; 2.2                     ; 6708 MB             ; 00:01:00                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 4745 MB             ; 00:00:02                           ;
+; Timing Analyzer      ; 00:00:03     ; 5.1                     ; 5035 MB             ; 00:00:11                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4695 MB             ; 00:00:01                           ;
+; Total                ; 00:00:39     ; --                      ; --                  ; 00:01:31                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                    ;
++----------------------+------------------+------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++----------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis ; DESKTOP-STF98TS  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-STF98TS  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-STF98TS  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-STF98TS  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-STF98TS  ; Windows 10 ; 10.0       ; x86_64         ;
++----------------------+------------------+------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off audio_visualizer_and_speech_vocoder -c audio_visualizer_and_speech_vocoder
+quartus_fit --read_settings_files=off --write_settings_files=off audio_visualizer_and_speech_vocoder -c audio_visualizer_and_speech_vocoder
+quartus_asm --read_settings_files=off --write_settings_files=off audio_visualizer_and_speech_vocoder -c audio_visualizer_and_speech_vocoder
+quartus_sta audio_visualizer_and_speech_vocoder -c audio_visualizer_and_speech_vocoder
+quartus_eda --read_settings_files=off --write_settings_files=off audio_visualizer_and_speech_vocoder -c audio_visualizer_and_speech_vocoder
+
+
+
