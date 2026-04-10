@@ -1,5 +1,5 @@
 Fitter report for audio_visualizer_and_speech_vocoder
-Tue Apr  7 16:57:47 2026
+Thu Apr  9 23:30:30 2026
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -73,7 +73,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                      ;
 +------------------------------------+------------------------------------------------+
-; Fitter Status                      ; Successful - Tue Apr  7 16:57:47 2026          ;
+; Fitter Status                      ; Successful - Thu Apr  9 23:30:30 2026          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; audio_visualizer_and_speech_vocoder            ;
 ; Top-level Entity Name              ; main                                           ;
@@ -159,7 +159,7 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
-; Average used               ; 2.24        ;
+; Average used               ; 2.25        ;
 ; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
@@ -168,10 +168,10 @@ https://fpgasoftware.intel.com/eula.
 ;     Processor 3            ;   8.7%      ;
 ;     Processor 4            ;   8.6%      ;
 ;     Processor 5            ;   8.5%      ;
-;     Processor 6            ;   8.4%      ;
-;     Processor 7            ;   8.4%      ;
-;     Processor 8            ;   8.3%      ;
-;     Processors 9-16        ;   8.0%      ;
+;     Processor 6            ;   8.5%      ;
+;     Processor 7            ;   8.5%      ;
+;     Processor 8            ;   8.4%      ;
+;     Processors 9-16        ;   8.1%      ;
 +----------------------------+-------------+
 
 
@@ -2230,6 +2230,7 @@ https://fpgasoftware.intel.com/eula.
 ; I/O Standard ; main           ;              ; SW[7]           ; 3.3-V LVTTL           ; QSF Assignment ;
 ; I/O Standard ; main           ;              ; SW[8]           ; 3.3-V LVTTL           ; QSF Assignment ;
 ; I/O Standard ; main           ;              ; SW[9]           ; 3.3-V LVTTL           ; QSF Assignment ;
+; I/O Standard ; main           ;              ; pwm_out         ; 3.3-V LVTTL           ; QSF Assignment ;
 +--------------+----------------+--------------+-----------------+-----------------------+----------------+
 
 
@@ -2454,7 +2455,7 @@ The pin-out file can be found in C:/Users/Katyousha/Documents/University/Third Y
 ; VGA_R[2]  ; Y2    ; 3        ; 16           ; 0            ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off         ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; VGA_R[3]  ; Y1    ; 3        ; 16           ; 0            ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off         ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; VGA_VS    ; N1    ; 2        ; 0            ; 13           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off         ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; pwm_out   ; AA7   ; 3        ; 29           ; 0            ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off         ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; pdm_out   ; AA7   ; 3        ; 29           ; 0            ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off         ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 +-----------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
 
 
@@ -2524,7 +2525,7 @@ The pin-out file can be found in C:/Users/Katyousha/Documents/University/Third Y
 ; AA4      ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
 ; AA5      ; 157        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; AA6      ; 156        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
-; AA7      ; 158        ; 3        ; pwm_out                                        ; output ; 3.3-V LVTTL           ;         ; Column I/O ; Y               ; no       ; Off          ;
+; AA7      ; 158        ; 3        ; pdm_out                                        ; output ; 3.3-V LVTTL           ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; AA8      ; 165        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; AA9      ; 169        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; AA10     ; 170        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
@@ -3042,7 +3043,7 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +-----------+-------------------------------+
 ; MIC_BCLK  ; Missing drive strength        ;
 ; MIC_LRCLK ; Missing drive strength        ;
-; pwm_out   ; Missing drive strength        ;
+; pdm_out   ; Missing drive strength        ;
 ; LEDR[0]   ; Missing drive strength        ;
 ; LEDR[1]   ; Missing drive strength        ;
 ; LEDR[2]   ; Missing drive strength        ;
@@ -3186,7 +3187,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------+----------+---------------+---------------+-----------------------+-----+------+
 ; MIC_BCLK  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; MIC_LRCLK ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; pwm_out   ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; pdm_out   ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; LEDR[0]   ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; LEDR[1]   ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; LEDR[2]   ; Output   ; --            ; --            ; --                    ; --  ; --   ;
@@ -4974,7 +4975,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Total Fail         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
 ; MIC_BCLK           ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; MIC_LRCLK          ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; pwm_out            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; pdm_out            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; LEDR[0]            ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; LEDR[1]            ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; LEDR[2]            ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
@@ -5128,8 +5129,8 @@ Info (170195): Router estimated average interconnect usage is 7% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
-Info (11888): Total time spent on timing analysis during the Fitter is 1.42 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
+Info (11888): Total time spent on timing analysis during the Fitter is 1.37 seconds.
 Info (334003): Started post-fitting delay annotation
 Warning (334000): Timing characteristics of device 10M50DAF484C6GES are preliminary
 Info (334004): Delay annotation completed successfully
@@ -5144,10 +5145,10 @@ Warning (169177): 3 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2
     Info (169178): Pin MIC_SD uses I/O standard 3.3-V LVTTL at Y5 File: C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/FinalNew/main.v Line: 3
 Info (144001): Generated suppressed messages file C:/Users/Katyousha/Documents/University/Third Year/EECS 3216/FinalNew/output_files/audio_visualizer_and_speech_vocoder.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 6708 megabytes
-    Info: Processing ended: Tue Apr  7 16:57:47 2026
-    Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:01:00
+    Info: Peak virtual memory: 6712 megabytes
+    Info: Processing ended: Thu Apr  9 23:30:31 2026
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:57
 
 
 +----------------------------+

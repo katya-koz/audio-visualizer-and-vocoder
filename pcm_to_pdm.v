@@ -1,7 +1,7 @@
 module pcm_to_pdm 
 #(parameter WIDTH = 18)
 (
-    input wire clk, // PDM clock (4 MHz for x64 OSR)
+    input wire clk, // PDM clock (3.072 MHz for x64 OSR)
     input wire reset,
     input wire signed [WIDTH-1:0] pcm_in, // 18 bit PCM sample
     output reg pdm_out // 1 bit PDM output

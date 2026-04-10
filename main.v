@@ -4,7 +4,7 @@ module main (
 	input  reset,
 	output MIC_BCLK,
 	output MIC_LRCLK,
-	output pwm_out,
+	output pdm_out,
 	output [9:0] LEDR,
 	input  [9:0] switch,
 	// VGA outputs 
@@ -21,7 +21,7 @@ module main (
 	wire [17:0] vocoded_pcm;
 
 
-	wire clock_4M, pixel_clk;
+	wire clock_3M, pixel_clk; // 3MHZ clock is actually 3.072 MHz for 48KHz sampling rate
 
 	wire [17:0] t0,  t1,  t2,  t3,  t4,  t5,  t6,  t7, t8,  t9,  t10, t11, t12, t13, t14, t15;
 	wire [23:0] f0,  f1,  f2,  f3,  f4,  f5,  f6,  f7, f8,  f9,  f10, f11, f12, f13, f14, f15;
@@ -31,7 +31,7 @@ module main (
 	pll3 myPll (
 		.areset (~reset),
 		.inclk0 (CLOCK_50),
-		.c0 (clock_4M),      
+		.c0 (clock_3M),      
 		.c1 (pixel_clk),   
 		.locked (is_locked)
 	);
@@ -45,7 +45,7 @@ module main (
 		.new_t(new_t),
 		.sample_out(sample_out),
 		.is_locked(is_locked),
-		.bclk_in(clock_4M),
+		.bclk_in(clock_3M),
 		.t0 (t0),
 		.t1 (t1),
 		.t2 (t2),
@@ -65,7 +65,7 @@ module main (
 	 );
 
 	fft_processor main_processor (
-		.clk(clock_4M),
+		.clk(clock_3M),
 		.reset (reset),
 		.new_t (new_t),
 		.t0 (t0),
@@ -105,7 +105,7 @@ module main (
 
 
 	visualizer vis (
-		.pixel_clk (pixel_clk), // 25.175 MHz
+		.pixel_clk (pixel_clk), // 25.175 MHz. standard for 640 x 480 VGA monitors
 		.reset (reset),
 		.VGA_R (VGA_R),
 		.VGA_G(VGA_G),
@@ -133,7 +133,7 @@ module main (
 	 
 	 
     speech_vocoder vocoder (
-		.clk (clock_4M),
+		.clk (clock_3M),
 		.reset (reset),
 		.pcm_in (sample_out),
 		.pcm_valid(new_t),
@@ -145,10 +145,10 @@ module main (
 	wire [17:0] pcm_selected = switch[0] ? (vocoded_pcm ) : (sample_out << 2);
 
 	pcm_to_pdm PCMtoPDM_converter (
-		.clk(clock_4M),
+		.clk(clock_3M),
 		.reset(~reset),
 		.pcm_in(pcm_selected),
-		.pdm_out(pwm_out)
+		.pdm_out(pdm_out)
 	);
 
 endmodule

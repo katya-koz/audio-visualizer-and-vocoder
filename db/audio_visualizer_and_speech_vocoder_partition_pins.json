@@ -8,7 +8,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "pwm_out",
+					"name" : "pdm_out",
 					"strict" : false
 				},
 				{
